@@ -1,4 +1,3 @@
-<index.html>
 <html lang="pt-br">
 
 <head>
@@ -12,7 +11,7 @@
       background-size: cover;
       font-family: sans-serif;
       padding: 10px;
-      color: #fff;
+      color: #e6e6e6;
     }
 
     .container {
@@ -100,12 +99,17 @@
       <label><input type="radio" name="motor" onchange="main()" /> 1º Street - 10.000</label>
       <label><input type="radio" name="motor" onchange="main()" /> 2º Sport - 20.000</label>
       <label><input type="radio" name="motor" onchange="main()" /> 3º Race - 30.000</label>
-      <label><input type="radio" name="motor" onchange="main()" /> 4º Top - 4000.000</label>
+      <label><input type="radio" name="motor" onchange="main()" /> 4º Top - 40.000</label>
     </div>
 
     <div class="section">
       <h4>Turbo</h4>
       <label><input type="checkbox" id="turbo" onclick="main()" /> 1 - 60.000</label>
+    </div>
+
+    <div class="section">
+      <h4>Hidráulica</h4>
+      <label><input type="checkbox" id="hidraulica" onclick="main()" /> Hidráulica - 40.000</label>
     </div>
 
     <div class="section">
@@ -120,7 +124,31 @@
       <label><input type="checkbox" onchange="main()" /> Pintura Secundária - 10.000</label>
       <label><input type="checkbox" onchange="main()" /> Fumaça Pneu - 30.000</label>
       <label><input type="checkbox" onchange="main()" /> Placa - 10.000</label>
-      <label><input type="checkbox" onchange="main()" /> extras - 3000.000</label>
+      <label><input type="checkbox" onchange="main()" /> extras - 30.000</label>
+      <label><input type="checkbox" onchange="main()" /> perolado - 5.000</label>
+      <label><input type="checkbox" onchange="main()" /> spoiler - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> parachoque dian - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> parachoque tras - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> paralama dian - 15.000</label>
+      <label><input type="checkbox" onchange="main()" /> paralama tras - 15.000</label>
+      <label><input type="checkbox" onchange="main()" /> saia - 15.000</label>
+      <label><input type="checkbox" onchange="main()" /> chassis - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> grade - 10.000</label>
+      <label><input type="checkbox" onchange="main()" /> assento - 10.000</label>
+      <label><input type="checkbox" onchange="main()" /> capo - 15.000</label>
+      <label><input type="checkbox" onchange="main()" /> escapamento - 10.000</label>
+      <label><input type="checkbox" onchange="main()" /> teto - 10.000</label>
+      <label><input type="checkbox" onchange="main()" /> decal - 30.000</label>
+      <label><input type="checkbox" onchange="main()" /> tanque - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> design - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> suporte - 30.000</label>
+      <label><input type="checkbox" onchange="main()" /> filtro de ar - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> bloco d motor - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> capa d farol - 15.000</label>
+      <label><input type="checkbox" onchange="main()" /> portas - 30.000</label>
+      <label><input type="checkbox" onchange="main()" /> extras - 30.000</label>
+    
+
     </div>
 
     <div class="section">
@@ -163,6 +191,9 @@
       if (document.getElementById('turbo').checked) {
         total += 60000;
       }
+      if (document.getElementById('hidraulica').checked) {
+        total += 40000;
+      }
 
       // Corrigido: pegar a seção Visual pelo título
       const visualSection = Array.from(document.querySelectorAll('.section')).find(
@@ -171,7 +202,7 @@
 
       if (visualSection) {
         const visualCheckboxes = visualSection.querySelectorAll('input[type="checkbox"]');
-        const visualValores = [20000, 40000, 30000, 90000, 20000, 4000, 10000, 10000, 30000, 10000, 3000000];
+        const visualValores = [20000, 40000, 30000, 90000, 20000, 4000, 10000, 10000, 30000, 10000, 30000, 5000, 20000, 20000, 20000, 15000, 15000, 15000, 20000, 10000, 10000, 15000, 10000, 10000, 30000, 20000, 20000, 30000, 20000, 20000, 15000, 30000, 30000];
         visualCheckboxes.forEach((box, i) => {
           if (box.checked) {
             total += visualValores[i];
@@ -223,7 +254,8 @@
       const vidro = document.getElementsByName('vidro');
       vidro.forEach(box => box.checked = false);
 
-      document.getElementById('turbo').checked = false;
+      document.getElementById('turbo').checked = true;
+      document.getElementById('hidraulica').checked = true;
 
       const visualSection = Array.from(document.querySelectorAll('.section')).find(
         sec => sec.querySelector('h4') && sec.querySelector('h4').textContent.trim() === 'Visual'

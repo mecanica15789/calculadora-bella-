@@ -64,7 +64,7 @@
 
  
 <div class="text-center">
-  <img src="https://sdmntprcentralus.oaiusercontent.com/files/e26cfc6e3713374_00000000-290c-61f5-ab3d-10e34d8ac795/drvs/thumbnail/raw?se=2025-06-14T07%3A01%3A15Z&sp=r&sv=2024-08-04&sr=b&scid=1b3dd18d-6149-5ba2-87c4-6fae8e6874dc&skoid=0da8417a-a4c3-4a19-9b05-b82cee9d8868&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-06-13T22%3A12%3A53Z&ske=2025-06-14T22%3A12%3A53Z&sks=b&skv=2024-08-04&sig=C3pOdv6DT%2BbH9tGnjVv5HDN71IH2s8g/RFAl%2BBFspM8%3D" alt="Mecânico" style="max-width: 200px; margin-bottom: 10px;" />
+  <img src="https://cdn.discordapp.com/attachments/1189359366600659066/1383541822457909288/imagem_da_calculadora.webp?ex=684f2b3b&is=684dd9bb&hm=35ab396ddeadde761412ba42dea7f45ed32219e4181ac8dfe462e7f8e1feb565&" alt="Mecânico" style="max-width: 200px; margin-bottom: 10px;" />
 </div>
 <div class="text-center" style="margin-bottom: 15px;">
   <div class="btn-group">
@@ -216,6 +216,17 @@
   </div>
 
 
+<div class="section">
+  <h4>ID do Discord</h4>
+  <input type="text" id="discordId" class="form-control" placeholder="Digite seu ID do Discord" />
+</div>
+
+
+
+
+
+
+
 <div class="text-center">
   <button class="btn btn-danger btn-block" onclick="enviarParaDiscord()">Finalizar</button>
 </div>
@@ -355,17 +366,19 @@
         escolhas.push(label);
       });
 
-      const mensagem = `
-🔧 **Bella Motors - Log de Finalização**
+const discordId = document.getElementById('discordId').value.trim() || "Não informado";
+
+const mensagem = `
+**Bella Motors**
 
 **Modificações escolhidas:**
 ${escolhas.length > 0 ? escolhas.map(e => `🔧 ${e}`).join('\n') : 'Nenhuma modificação selecionada.'}
 
 💰 **Desconto aplicado:** ${desconto}%
 💵 **Total a cobrar:** R$ ${total}
+🆔 **ID do Discord:** ${discordId}
 📆 ${new Date().toLocaleString()}
 `;
-
       fetch(webhookURL, {
         method: "POST",
         headers: {

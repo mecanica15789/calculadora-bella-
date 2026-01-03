@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculadora Mobile - Coelho Motors</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: url('a586c182-a078-4b6d-ae1a-1dfc7072417a.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Orbitron', sans-serif;
+      color: #e6e6e6;
+      padding: 15px;
+    }
+
+    .container {
+      /* Updated background and shadow to black/red theme */
+      background-color: rgba(10, 10, 10, 0.95);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+      max-width: 960px;
+    }
+
+    h1, h3 {
+      /* Updated text shadow and color to red */
+      text-shadow: 1px 1px 5px rgba(255, 0, 0, 0.8);
+      color: #ff0000;
+    }
+
+    .section {
+      background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(0,0,0,0.2));
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      /* Updated border to red */
+      border: 1px solid rgba(255, 0, 0, 0.3);
+    }
+
+    .section h4 {
+      font-weight: bold;
+      margin-bottom: 15px;
+      /* Changed color from gold to red */
+      color: #ff0000;
+      border-bottom: 1px solid rgba(255, 0, 0, 0.4);
+      padding-bottom: 5px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      padding-left: 5px;
+      cursor: pointer;
+    }
+
+    .btn {
+      font-weight: bold;
+      border-radius: 8px;
+      padding: 10px 20px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-warning {
+      /* Changed warning button to red/black theme */
+      background-color: #cc0000;
+      border-color: #990000;
+      color: white;
+    }
+
+    .btn-success {
+      /* Changed success button to darker red */
+      background-color: #990000;
+      border-color: #660000;
+    }
+
+    .btn-danger {
+      /* Changed danger button to bright red */
+      background-color: #ff0000;
+      border-color: #cc0000;
+    }
+
+    .input-group {
+      margin-bottom: 10px;
+    }
+
+    input.form-control {
+      border-radius: 6px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .text-center img {
+      max-width: 220px;
+      border-radius: 10px;
+      /* Updated shadow to red glow */
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Changed name from Bella Motors to Coelho Motors -->
+    <h1 class="text-center">Coelho Motors</h1>
+    <h3 class="text-center">Calculadora</h3>
+
+    <div class="text-center">
+      <img src="https://cdn.discordapp.com/attachments/1189359366600659066/1383541822457909288/imagem_da_calculadora.webp?ex=684f2b3b&is=684dd9bb&hm=35ab396ddeadde761412ba42dea7f45ed32219e4181ac8dfe462e7f8e1feb565&" alt="Mecânico" style="max-width: 200px; margin-bottom: 10px;" />
+    </div>
+    <div class="text-center" style="margin-bottom: 15px;">
+      <div class="btn-group">
+        <button class="btn btn-warning" onclick="reload()">Limpar Tudo</button>
+        <button class="btn btn-success" onclick="fullTuning()">Full Tuning</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h4>Freios</h4>
+      <label><input type="radio" name="freio" onchange="main()" /> Street - 10.000</label>
+      <label><input type="radio" name="freio" onchange="main()" /> Sport - 15.000</label>
+      <label><input type="radio" name="freio" onchange="main()" /> Race - 20.000</label>
+    </div>
+
+    <div class="section">
+      <h4>Transmissão</h4>
+      <label><input type="radio" name="trans" onchange="main()" /> Street - 10.000</label>
+      <label><input type="radio" name="trans" onchange="main()" /> Sport - 15.000</label>
+      <label><input type="radio" name="trans" onchange="main()" /> Race - 20.000</label>
+    </div>
+
+    <div class="section">
+      <h4>Suspensão</h4>
+      <label><input type="radio" name="susp" onchange="main()" /> 1º Stage - 5.000</label>
+      <label><input type="radio" name="susp" onchange="main()" /> 2º Stage - 10.000</label>
+      <label><input type="radio" name="susp" onchange="main()" /> 3º Stage - 15.000</label>
+      <label><input type="radio" name="susp" onchange="main()" /> 4º Stage - 20.000</label>
+    </div>
+
+    <div class="section">
+      <h4>Blindagem</h4>
+      <label><input type="radio" name="blin" onchange="main()" /> 1º 20% - 50.000</label>
+      <label><input type="radio" name="blin" onchange="main()" /> 2º 40% - 60.000</label>
+      <label><input type="radio" name="blin" onchange="main()" /> 3º 60% - 70.000</label>
+      <label><input type="radio" name="blin" onchange="main()" /> 4º 80% - 80.000</label>
+      <label><input type="radio" name="blin" onchange="main()" /> 5º 100% - 90.000</label>
+    </div>
+
+    <div class="section">
+      <h4>Motor</h4>
+      <label><input type="radio" name="motor" onchange="main()" /> 1º Street - 10.000</label>
+      <label><input type="radio" name="motor" onchange="main()" /> 2º Sport - 20.000</label>
+      <label><input type="radio" name="motor" onchange="main()" /> 3º Race - 30.000</label>
+      <label><input type="radio" name="motor" onchange="main()" /> 4º Top - 40.000</label>
+    </div>
+
+    <div class="section">
+      <h4>Turbo</h4>
+      <label><input type="checkbox" id="turbo" onclick="main()" /> 1 - 60.000</label>
+    </div>
+
+    <div class="section">
+      <h4>Hidráulica</h4>
+      <label><input type="checkbox" id="hidraulica" onclick="main()" /> Hidráulica - 40.000</label>
+    </div>
+
+    <div class="section">
+      <h4>Visual</h4>
+      <label><input type="checkbox" onchange="main()" /> Buzina - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> Xenon - 40.000</label>
+      <label><input type="checkbox" onchange="main()" /> Neon - 30.000</label>
+      <label><input type="checkbox" onchange="main()" /> Rodas - 90.000</label>
+      <label><input type="checkbox" onchange="main()" /> Cor Rodas - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> Acess. Rodas - 4.000</label>
+      <label><input type="checkbox" onchange="main()" /> Pintura Primária - 10.000</label>
+      <label><input type="checkbox" onchange="main()" /> Pintura Secundária - 10.000</label>
+      <label><input type="checkbox" onchange="main()" /> Fumaça Pneu - 30.000</label>
+      <label><input type="checkbox" onchange="main()" /> Placa - 10.000</label>
+      <label><input type="checkbox" onchange="main()" /> extras - 30.000</label>
+      <label><input type="checkbox" onchange="main()" /> perolado - 5.000</label>
+      <label><input type="checkbox" onchange="main()" /> spoiler - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> parachoque dian - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> parachoque tras - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> paralama dian - 15.000</label>
+      <label><input type="checkbox" onchange="main()" /> paralama tras - 15.000</label>
+      <label><input type="checkbox" onchange="main()" /> saia - 15.000</label>
+      <label><input type="checkbox" onchange="main()" /> chassis - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> grade - 10.000</label>
+      <label><input type="checkbox" onchange="main()" /> assento - 10.000</label>
+      <label><input type="checkbox" onchange="main()" /> capo - 15.000</label>
+      <label><input type="checkbox" onchange="main()" /> escapamento - 10.000</label>
+      <label><input type="checkbox" onchange="main()" /> teto - 10.000</label>
+      <label><input type="checkbox" onchange="main()" /> decal - 30.000</label>
+      <label><input type="checkbox" onchange="main()" /> tanque - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> design - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> suporte - 30.000</label>
+      <label><input type="checkbox" onchange="main()" /> filtro de ar - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> bloco d motor - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> capa d farol - 15.000</label>
+      <label><input type="checkbox" onchange="main()" /> portas - 30.000</label>
+      <label><input type="checkbox" onchange="main()" /> extras - 30.000</label>
+    </div>
+
+    <div class="section">
+      <h4>Interior</h4>
+      <label><input type="checkbox" onchange="main()" /> enfeites - 40.000</label>
+      <label><input type="checkbox" onchange="main()" /> painel - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> placa - 50.000</label>
+      <label><input type="checkbox" onchange="main()" /> ponteiros - 20.000</label>
+      <label><input type="checkbox" onchange="main()" /> banco - 30.000</label>
+      <label><input type="checkbox" onchange="main()" /> design - 30.000</label>
+      <label><input type="checkbox" onchange="main()" /> volante- 35.000</label>
+      <label><input type="checkbox" onchange="main()" /> som - 30.000</label>
+      <label><input type="checkbox" onchange="main()" /> porta-mala - 30.000</label>
+      <label><input type="checkbox" onchange="main()" /> cambio - 35.000</label>
+      <label><input type="checkbox" onchange="main()" /> janelas - 30.000</label>
+    </div>
+
+    <div class="section">
+      <h4>Vidros</h4>
+      <label><input type="radio" name="vidro" onchange="main()" /> 1 Fume 100% - 40.000</label>
+      <label><input type="radio" name="vidro" onchange="main()" /> 2 Fume 70% - 40.000</label>
+      <label><input type="radio" name="vidro" onchange="main()" /> 3 Fume 50% - 40.000</label>
+      <label><input type="radio" name="vidro" onchange="main()" /> 4 Fume 40% - 40.000</label>
+      <label><input type="radio" name="vidro" onchange="main()" /> 5 Fume 30% - 40.000</label>
+    </div>
+
+    <div class="section">
+      <h4>Desconto</h4>
+      <div class="input-group">
+        <span class="input-group-addon"> %: </span>
+        <input type="number" id="desconto" class="form-control" placeholder="0" onchange="main()" min="0" max="100" />
+      </div>
+    </div>
+
+    <div class="section">
+      <h4>Total</h4>
+      <div class="input-group">
+        <span class="input-group-addon">Total a cobrar:</span>
+        <input type="text" id="total" class="form-control" readonly />
+      </div>
+    </div>
+
+    <div class="section">
+      <h4>ID do Discord</h4>
+      <input type="text" id="discordId" class="form-control" placeholder="Digite seu ID do Discord" />
+    </div>
+
+    <div class="text-center">
+      <button class="btn btn-danger btn-block" onclick="enviarParaDiscord()">Finalizar</button>
+    </div>
+  </div>
+
+  <script>
+    function main() {
+      let total = 0;
+
+      total += getSelectedValue('freio');
+      total += getSelectedValue('trans');
+      total += getSelectedValue('susp');
+      total += getSelectedValue('blin');
+      total += getSelectedValue('motor');
+      total += getSelectedValue('vidro');
+
+      if (document.getElementById('turbo').checked) {
+        total += 60000;
+      }
+      if (document.getElementById('hidraulica').checked) {
+        total += 40000;
+      }
+
+      const visualSection = Array.from(document.querySelectorAll('.section')).find(
+        sec => sec.querySelector('h4') && sec.querySelector('h4').textContent.trim() === 'Visual'
+      );
+
+      if (visualSection) {
+        const visualCheckboxes = visualSection.querySelectorAll('input[type="checkbox"]');
+        const visualValores = [20000, 40000, 30000, 90000, 20000, 4000, 10000, 10000, 30000, 10000, 30000, 5000, 20000, 20000, 20000, 15000, 15000, 15000, 20000, 10000, 10000, 15000, 10000, 10000, 30000, 20000, 20000, 30000, 20000, 20000, 15000, 30000, 30000];
+        visualCheckboxes.forEach((box, i) => {
+          if (box.checked) {
+            total += visualValores[i];
+          }
+        });
+      }
+
+      const interiorSection = Array.from(document.querySelectorAll('.section')).find(
+        sec => sec.querySelector('h4') && sec.querySelector('h4').textContent.trim() === 'Interior'
+      );
+      if (interiorSection) {
+        const interiorCheckboxes = interiorSection.querySelectorAll('input[type="checkbox"]');
+        const interiorValores = [40000, 20000, 50000, 20000, 30000, 30000, 35000, 30000, 30000, 35000, 30000];
+        interiorCheckboxes.forEach((box, i) => {
+          if (box.checked) {
+            total += interiorValores[i];
+          }
+        });
+      }
+
+      const desconto = parseFloat(document.getElementById('desconto').value) || 0;
+      const descontoValor = (total * desconto) / 100;
+      const totalComDesconto = total - descontoValor;
+
+      document.getElementById('total').value = totalComDesconto.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+    }
+
+    function getSelectedValue(name) {
+      const radios = document.getElementsByName(name);
+      for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+          const label = radios[i].parentElement.textContent;
+          const match = label.match(/(\d+\.?\d*)/g);
+          if (match) {
+            return parseInt(match[match.length - 1].replace(/\./g, ''));
+          }
+        }
+      }
+      return 0;
+    }
+
+    function reload() {
+      window.location.reload();
+    }
+
+    function fullTuning() {
+      const freios = document.getElementsByName('freio');
+      const trans = document.getElementsByName('trans');
+      const susp = document.getElementsByName('susp');
+      const motor = document.getElementsByName('motor');
+
+      if (freios.length) freios[freios.length - 1].checked = true;
+      if (trans.length) trans[trans.length - 1].checked = true;
+      if (susp.length) susp[susp.length - 1].checked = true;
+      if (motor.length) motor[motor.length - 1].checked = true;
+
+      const blin = document.getElementsByName('blin');
+      blin.forEach(box => box.checked = false);
+
+      const vidro = document.getElementsByName('vidro');
+      vidro.forEach(box => box.checked = false);
+
+      document.getElementById('turbo').checked = true;
+      document.getElementById('hidraulica').checked = true;
+
+      const visualSection = Array.from(document.querySelectorAll('.section')).find(
+        sec => sec.querySelector('h4') && sec.querySelector('h4').textContent.trim() === 'Visual'
+      );
+      if (visualSection) {
+        const visualCheckboxes = visualSection.querySelectorAll('input[type="checkbox"]');
+        visualCheckboxes.forEach(box => box.checked = false);
+      }
+
+      main();
+    }
+
+    window.onload = main;
+  </script>
+
+  <script>
+    function enviarParaDiscord() {
+      const webhookURL = "https://discord.com/api/webhooks/1383308306415747102/ZRjmKy_OTD_fapFzsDJYA8byyAwZQV28wWX8RZG9R12LE4dYFUpE-xuyrY0anYmk_lR0";
+
+      const total = document.getElementById('total').value;
+      const desconto = document.getElementById('desconto').value || "0";
+      let escolhas = [];
+
+      document.querySelectorAll('input[type="radio"]:checked, input[type="checkbox"]:checked').forEach(input => {
+        const label = input.parentElement.textContent.trim();
+        escolhas.push(label);
+      });
+
+      const discordId = document.getElementById('discordId').value.trim() || "Não informado";
+
+      /* Updated Discord message with Coelho Motors branding */
+      const mensagem = `
+🔧 **Coelho Motors - Log de Finalização**
+
+**Modificações escolhidas:**
+${escolhas.length > 0 ? escolhas.map(e => `🔧 ${e}`).join('\n') : 'Nenhuma modificação selecionada.'}
+
+💰 **Desconto aplicado:** ${desconto}%
+💵 **Total a cobrar:** R$ ${total}
+🆔 **ID do Discord:** ${discordId}
+📆 ${new Date().toLocaleString()}
+`;
+      fetch(webhookURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ content: mensagem })
+      })
+      .then(res => {
+        if (res.ok) {
+          alert("✅ Log enviado com sucesso para o Discord!");
+        } else {
+          alert("❌ Erro ao enviar log. Verifique o webhook.");
+        }
+      })
+      .catch(err => {
+        console.error("Erro ao enviar:", err);
+        alert("❌ Falha na conexão com o Discord.");
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,627 +1,134 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Calculadora Mobile - ChaulimCommunity Motors</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre no nosso Discord</title>
+
+```
+<style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     body {
-      background: 
-        linear-gradient(rgba(255, 255, 255, 0.08), rgba(10, 10, 10, 0.75)), 
-        url('https://cdn.discordapp.com/attachments/1189359366600659066/1527848381387640903/image0.png?ex=6a96d1f0&is=6a958070&hm=857a059945d86af72b16335f38c50139d5104f871d2cda4e308b72036782f457&') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Rajdhani', sans-serif;
-      color: #f0f0f0;
-      padding: 20px 15px;
-      min-height: 100vh;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Orbitron', sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #5865F2, #23272a);
+        padding: 20px;
     }
 
     .container {
-      background: linear-gradient(145deg, rgba(20, 20, 20, 0.85), rgba(10, 10, 10, 0.9));
-      padding: 30px 25px;
-      border-radius: 24px;
-      box-shadow: 
-        0 0 40px rgba(255, 215, 0, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
-      max-width: 720px;
-      margin: 0 auto;
-      border: 1px solid rgba(255, 215, 0, 0.2);
-      backdrop-filter: blur(6px);
+        width: 100%;
+        max-width: 450px;
+        background: rgba(255, 255, 255, 0.10);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 25px;
+        padding: 45px 30px;
+        text-align: center;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    .discord-icon {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 25px;
+        background: #5865F2;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 30px rgba(88, 101, 242, 0.5);
+    }
+
+    .discord-icon span {
+        color: white;
+        font-size: 48px;
+        font-weight: bold;
     }
 
     h1 {
-      text-align: center;
-      font-size: 32px;
-      font-weight: 900;
-      color: #ffd700;
-      text-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 2px 4px rgba(0,0,0,0.8);
-      margin-bottom: 5px;
-      letter-spacing: 2px;
+        color: white;
+        font-size: 30px;
+        margin-bottom: 12px;
     }
 
-    h3 {
-      text-align: center;
-      font-size: 18px;
-      color: #e6c200;
-      margin-bottom: 25px;
-      letter-spacing: 4px;
-      opacity: 0.95;
+    p {
+        color: #e4e4e4;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 30px;
     }
 
-    .logo-img {
-      display: block;
-      margin: 0 auto 25px;
-      max-width: 180px;
-      border-radius: 16px;
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.35);
-      border: 2px solid rgba(255, 215, 0, 0.4);
-      transition: transform 0.3s ease;
+    .discord-button {
+        display: block;
+        width: 100%;
+        padding: 16px;
+        background: #5865F2;
+        color: white;
+        text-decoration: none;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: bold;
+        transition: 0.3s;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     }
 
-    .logo-img:hover {
-      transform: scale(1.05);
+    .discord-button:hover {
+        background: #4752c4;
+        transform: translateY(-3px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
     }
 
-    .btn-group {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
+    .footer {
+        margin-top: 25px;
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 13px;
     }
+</style>
+```
 
-    .section {
-      background: linear-gradient(135deg, rgba(35, 35, 35, 0.85), rgba(15, 15, 15, 0.9));
-      padding: 18px 22px;
-      border-radius: 16px;
-      margin-bottom: 20px;
-      border: 1px solid rgba(255, 215, 0, 0.15);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-      transition: all 0.3s ease;
-    }
-
-    .section:hover {
-      border-color: rgba(255, 215, 0, 0.4);
-      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-    }
-
-    .section h4 {
-      font-weight: 700;
-      margin-bottom: 16px;
-      color: #ffd700;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.25);
-      padding-bottom: 8px;
-      font-size: 16px;
-      letter-spacing: 1px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .section h4::before {
-      content: '';
-      width: 4px;
-      height: 16px;
-      background: linear-gradient(to bottom, #ffd700, #b8860b);
-      border-radius: 2px;
-      display: inline-block;
-    }
-
-    label {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-      padding: 8px 12px;
-      cursor: pointer;
-      border-radius: 8px;
-      transition: all 0.25s ease;
-      font-size: 15px;
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    label:hover {
-      background: rgba(255, 215, 0, 0.08);
-      padding-left: 16px;
-    }
-
-    input[type="radio"],
-    input[type="checkbox"] {
-      margin-right: 12px;
-      accent-color: #ffd700;
-      width: 18px;
-      height: 18px;
-      cursor: pointer;
-    }
-
-    .btn {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 700;
-      border-radius: 10px;
-      padding: 10px 22px;
-      transition: all 0.3s ease;
-      border: none;
-      letter-spacing: 0.5px;
-      font-size: 15px;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    }
-
-    .btn:active {
-      transform: translateY(0);
-    }
-
-    .btn-warning {
-      background: linear-gradient(135deg, #ffd700, #ffb300);
-      color: #000;
-      box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
-    }
-
-    .btn-warning:hover {
-      background: linear-gradient(135deg, #fff100, #ffc107);
-      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
-    }
-
-    .btn-success {
-      background: linear-gradient(135deg, #28c76f, #20a05a);
-      box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
-    }
-
-    .btn-success:hover {
-      background: linear-gradient(135deg, #34d378, #28c76f);
-      box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
-    }
-
-    .btn-danger {
-      background: linear-gradient(135deg, #ea3943, #c82333);
-      box-shadow: 0 4px 15px rgba(220, 53, 69, 0.35);
-      margin-top: 8px;
-      padding: 12px;
-      font-size: 17px;
-    }
-
-    .btn-danger:hover {
-      background: linear-gradient(135deg, #f53f49, #ea3943);
-      box-shadow: 0 6px 25px rgba(220, 53, 69, 0.45);
-    }
-
-    .input-group {
-      margin-bottom: 0;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: inset 0 2px 6px rgba(0,0,0,0.5);
-    }
-
-    .input-group-addon {
-      background: linear-gradient(135deg, #2a2a2a, #1f1f1f);
-      border: none;
-      color: #ffd700;
-      font-weight: 600;
-      border-radius: 10px 0 0 10px;
-      padding: 0 18px;
-    }
-
-    input.form-control {
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 215, 0, 0.2);
-      color: #fff;
-      border-radius: 0 10px 10px 0;
-      padding: 10px 14px;
-      font-size: 15px;
-      transition: all 0.3s ease;
-      box-shadow: none;
-    }
-
-    input.form-control:focus {
-      border-color: #ffd700;
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.15), inset 0 0 8px rgba(255, 215, 0, 0.1);
-    }
-
-    input.form-control[readonly] {
-      background: linear-gradient(135deg, rgba(26, 71, 42, 0.6), rgba(20, 55, 32, 0.7));
-      border-color: rgba(40, 167, 69, 0.4);
-      font-weight: 700;
-      font-size: 18px;
-      color: #98fb98;
-      letter-spacing: 1px;
-    }
-
-    .aviso-codigo {
-      margin-top: 8px;
-      font-size: 13px;
-      color: #ffd700;
-    }
-
-    .codigo-invalido {
-      color: #ff4444 !important;
-      font-weight: bold;
-    }
-
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #111;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(to bottom, #ffd700, #b8860b);
-      border-radius: 4px;
-    }
-
-    @media (max-width: 576px) {
-      .container {
-        padding: 20px 15px;
-      }
-      h1 {
-        font-size: 24px;
-      }
-      .section {
-        padding: 15px;
-      }
-    }
-  </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>ChaulimCommunity MOTORS</h1>
-    <h3>CALCULADORA DE TUNING</h3>
 
-    <img src="https://cdn.discordapp.com/attachments/1189359366600659066/1527848381387640903/image0.png?ex=6a96d1f0&is=6a958070&hm=857a059945d86af72b16335f38c50139d5104f871d2cda4e308b72036782f457&" alt="Logo ChaulimCommunity Motors" class="logo-img" />
+```
+<div class="container">
 
-    <div class="btn-group">
-      <button class="btn btn-warning" onclick="reload()">🔄 Limpar Tudo</button>
-      <button class="btn btn-success" onclick="fullTuning()">🏎️ Full Tuning</button>
+    <div class="discord-icon">
+        <span>⌁</span>
     </div>
 
-    <!-- 🔑 CÓDIGO DO MECÂNICO -->
-    <div class="section">
-      <h4>🔑 Código do Mecânico</h4>
-      <input type="text" id="codigoMecanico" class="form-control" placeholder="Digite seu código" oninput="verificarCodigo()" />
-      <div id="statusCodigo" class="aviso-codigo"></div>
+    <h1>Entre no nosso Discord</h1>
+
+    <p>
+        Faça parte da nossa comunidade, fique por dentro das novidades,
+        participe dos eventos e converse com a nossa equipe.
+    </p>
+
+    <!-- ALTERE O LINK ABAIXO -->
+    <a
+        class="discord-button"
+        href="https://discord.gg/9TV7mb55wj"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Entrar no Discord
+    </a>
+
+    <div class="footer">
+        © 2026 • Nossa Comunidade
     </div>
 
-    <!-- 👤 ID DO CLIENTE -->
-    <div class="section">
-      <h4>👤 ID do Cliente</h4>
-      <input type="text" id="idCliente" class="form-control" placeholder="Digite o ID do Discord do Cliente" />
-    </div>
+</div>
+```
 
-    <div class="section">
-      <h4>Freios</h4>
-      <label><input type="radio" name="freio" onchange="main()" /> Street — R$ 10.000</label>
-      <label><input type="radio" name="freio" onchange="main()" /> Sport — R$ 15.000</label>
-      <label><input type="radio" name="freio" onchange="main()" /> Race — R$ 20.000</label>
-    </div>
-
-    <div class="section">
-      <h4>Transmissão</h4>
-      <label><input type="radio" name="trans" onchange="main()" /> Street — R$ 10.000</label>
-      <label><input type="radio" name="trans" onchange="main()" /> Sport — R$ 15.000</label>
-      <label><input type="radio" name="trans" onchange="main()" /> Race — R$ 20.000</label>
-    </div>
-
-    <div class="section">
-      <h4>Suspensão</h4>
-      <label><input type="radio" name="susp" onchange="main()" /> 1º Stage — R$ 5.000</label>
-      <label><input type="radio" name="susp" onchange="main()" /> 2º Stage — R$ 10.000</label>
-      <label><input type="radio" name="susp" onchange="main()" /> 3º Stage — R$ 15.000</label>
-      <label><input type="radio" name="susp" onchange="main()" /> 4º Stage — R$ 20.000</label>
-    </div>
-
-    <div class="section">
-      <h4>Blindagem</h4>
-      <label><input type="radio" name="blin" onchange="main()" /> 1º — 20% — R$ 50.000</label>
-      <label><input type="radio" name="blin" onchange="main()" /> 2º — 40% — R$ 60.000</label>
-      <label><input type="radio" name="blin" onchange="main()" /> 3º — 60% — R$ 70.000</label>
-      <label><input type="radio" name="blin" onchange="main()" /> 4º — 80% — R$ 80.000</label>
-      <label><input type="radio" name="blin" onchange="main()" /> 5º — 100% — R$ 90.000</label>
-    </div>
-
-    <div class="section">
-      <h4>Motor</h4>
-      <label><input type="radio" name="motor" onchange="main()" /> 1º Street — R$ 10.000</label>
-      <label><input type="radio" name="motor" onchange="main()" /> 2º Sport — R$ 20.000</label>
-      <label><input type="radio" name="motor" onchange="main()" /> 3º Race — R$ 30.000</label>
-      <label><input type="radio" name="motor" onchange="main()" /> 4º Top — R$ 40.000</label>
-    </div>
-
-    <div class="section">
-      <h4>Turbo</h4>
-      <label><input type="checkbox" id="turbo" onclick="main()" /> Turbo Completo — R$ 60.000</label>
-    </div>
-
-    <div class="section">
-      <h4>Hidráulica</h4>
-      <label><input type="checkbox" id="hidraulica" onclick="main()" /> Sistema Hidráulico — R$ 40.000</label>
-    </div>
-
-    <div class="section">
-      <h4>Personalização Externa</h4>
-      <label><input type="checkbox" onchange="main()" /> Buzina — R$ 20.000</label>
-      <label><input type="checkbox" onchange="main()" /> Xenon — R$ 40.000</label>
-      <label><input type="checkbox" onchange="main()" /> Neon — R$ 30.000</label>
-      <label><input type="checkbox" onchange="main()" /> Rodas — R$ 90.000</label>
-      <label><input type="checkbox" onchange="main()" /> Cor das Rodas — R$ 20.000</label>
-      <label><input type="checkbox" onchange="main()" /> Acessórios das Rodas — R$ 4.000</label>
-      <label><input type="checkbox" onchange="main()" /> Pintura Primária — R$ 10.000</label>
-      <label><input type="checkbox" onchange="main()" /> Pintura Secundária — R$ 10.000</label>
-      <label><input type="checkbox" onchange="main()" /> Fumaça de Pneu — R$ 30.000</label>
-      <label><input type="checkbox" onchange="main()" /> Placa — R$ 10.000</label>
-      <label><input type="checkbox" onchange="main()" /> Extras Externos — R$ 30.000</label>
-      <label><input type="checkbox" onchange="main()" /> Pintura Perolada — R$ 5.000</label>
-      <label><input type="checkbox" onchange="main()" /> Spoiler — R$ 20.000</label>
-      <label><input type="checkbox" onchange="main()" /> Para-choque Dianteiro — R$ 20.000</label>
-      <label><input type="checkbox" onchange="main()" /> Para-choque Traseiro — R$ 20.000</label>
-      <label><input type="checkbox" onchange="main()" /> Paralama Dianteiro — R$ 15.000</label>
-      <label><input type="checkbox" onchange="main()" /> Paralama Traseiro — R$ 15.000</label>
-      <label><input type="checkbox" onchange="main()" /> Saia Lateral — R$ 15.000</label>
-      <label><input type="checkbox" onchange="main()" /> Chassis — R$ 20.000</label>
-      <label><input type="checkbox" onchange="main()" /> Grade Frontal — R$ 10.000</label>
-      <label><input type="checkbox" onchange="main()" /> Assento — R$ 10.000</label>
-      <label><input type="checkbox" onchange="main()" /> Capô — R$ 15.000</label>
-      <label><input type="checkbox" onchange="main()" /> Escapamento — R$ 10.000</label>
-      <label><input type="checkbox" onchange="main()" /> Teto — R$ 10.000</label>
-      <label><input type="checkbox" onchange="main()" /> Adesivos/Decalques — R$ 30.000</label>
-      <label><input type="checkbox" onchange="main()" /> Tanque — R$ 20.000</label>
-      <label><input type="checkbox" onchange="main()" /> Design Externo — R$ 20.000</label>
-      <label><input type="checkbox" onchange="main()" /> Suporte — R$ 30.000</label>
-      <label><input type="checkbox" onchange="main()" /> Filtro de Ar — R$ 20.000</label>
-      <label><input type="checkbox" onchange="main()" /> Bloco do Motor — R$ 20.000</label>
-      <label><input type="checkbox" onchange="main()" /> Capa do Farol — R$ 15.000</label>
-      <label><input type="checkbox" onchange="main()" /> Portas — R$ 30.000</label>
-      <label><input type="checkbox" onchange="main()" /> Extras — R$ 30.000</label>
-    </div>
-
-    <div class="section">
-      <h4>Personalização Interna</h4>
-      <label><input type="checkbox" onchange="main()" /> Enfeites Internos — R$ 40.000</label>
-      <label><input type="checkbox" onchange="main()" /> Painel — R$ 20.000</label>
-      <label><input type="checkbox" onchange="main()" /> Placa Interna — R$ 50.000</label>
-      <label><input type="checkbox" onchange="main()" /> Ponteiros — R$ 20.000</label>
-      <label><input type="checkbox" onchange="main()" /> Bancos — R$ 30.000</label>
-      <label><input type="checkbox" onchange="main()" /> Design Interno — R$ 30.000</label>
-      <label><input type="checkbox" onchange="main()" /> Volante — R$ 35.000</label>
-      <label><input type="checkbox" onchange="main()" /> Sistema de Som — R$ 30.000</label>
-      <label><input type="checkbox" onchange="main()" /> Porta-Malas — R$ 30.000</label>
-      <label><input type="checkbox" onchange="main()" /> Câmbio — R$ 35.000</label>
-      <label><input type="checkbox" onchange="main()" /> Janelas — R$ 30.000</label>
-    </div>
-
-    <div class="section">
-      <h4>Vidros</h4>
-      <label><input type="radio" name="vidro" onchange="main()" /> Fume 100% — R$ 40.000</label>
-      <label><input type="radio" name="vidro" onchange="main()" /> Fume 70% — R$ 40.000</label>
-      <label><input type="radio" name="vidro" onchange="main()" /> Fume 50% — R$ 40.000</label>
-      <label><input type="radio" name="vidro" onchange="main()" /> Fume 40% — R$ 40.000</label>
-      <label><input type="radio" name="vidro" onchange="main()" /> Fume 30% — R$ 40.000</label>
-    </div>
-
-    <div class="section">
-      <h4>Desconto (%)</h4>
-      <div class="input-group">
-        <span class="input-group-addon">%</span>
-        <input type="number" id="desconto" class="form-control" placeholder="0" onchange="main()" min="0" max="100" />
-      </div>
-    </div>
-
-    <div class="section">
-      <h4>💰 Total a Pagar</h4>
-      <div class="input-group">
-        <span class="input-group-addon">R$</span>
-        <input type="text" id="total" class="form-control" readonly />
-      </div>
-    </div>
-
-    <button class="btn btn-danger btn-block" onclick="enviarParaDiscord()" id="btnEnviar">📤 Enviar Orçamento</button>
-  </div>
-
-  <script>
-    // =====================================================
-    // 🔑 LISTA DE CÓDIGOS PERMITIDOS — EDITE AQUI!
-    // =====================================================
-    const listaMecanicos = {
-"MEC2001": "1001",
-"MEC2002": "1002",
-"MEC2003": "1003",
-"MEC2004": "1004",
-"MEC2005": "1005",
-"MEC2006": "1006",
-"MEC2007": "1007",
-"MEC2008": "1008",
-"MEC2009": "1009",
-"MEC2010": "1010",
-"MEC2011": "1011",
-"MEC2012": "1012",
-"MEC2013": "1013",
-"MEC2014": "1014",
-"MEC2015": "1015",
-"MEC2016": "1016",
-"MEC2017": "1017",
-"MEC2018": "1018",
-"MEC2019": "1019",
-"MEC2020": "1020"
-      // ↓ ADICIONE AQUI MAIS CÓDIGOS ↓
-      // "CODIGO_SECRETO": "ID_REAL",
-    };
-
-    let idMecanicoAtual = null;
-
-    // =====================================================
-    // VERIFICAÇÃO DO CÓDIGO
-    // =====================================================
-    function verificarCodigo() {
-      const codigo = document.getElementById('codigoMecanico').value.trim().toUpperCase();
-      const status = document.getElementById('statusCodigo');
-      idMecanicoAtual = null;
-
-      if (!codigo) {
-        status.innerHTML = '';
-        return;
-      }
-
-      if (listaMecanicos.hasOwnProperty(codigo)) {
-        idMecanicoAtual = listaMecanicos[codigo];
-        status.innerHTML = `✅ Acesso Autorizado!`;
-        status.classList.remove('codigo-invalido');
-      } else {
-        status.innerHTML = `❌ Código Inválido! Acesso Negado`;
-        status.classList.add('codigo-invalido');
-      }
-    }
-
-    // =====================================================
-    // CÁLCULOS
-    // =====================================================
-    function main() {
-      let total = 0;
-      total += getSelectedValue('freio');
-      total += getSelectedValue('trans');
-      total += getSelectedValue('susp');
-      total += getSelectedValue('blin');
-      total += getSelectedValue('motor');
-      total += getSelectedValue('vidro');
-
-      if (document.getElementById('turbo').checked) total += 60000;
-      if (document.getElementById('hidraulica').checked) total += 40000;
-
-      const visualSection = Array.from(document.querySelectorAll('.section')).find(
-        sec => sec.querySelector('h4')?.textContent.trim() === 'Personalização Externa'
-      );
-      if (visualSection) {
-        const visualCheckboxes = visualSection.querySelectorAll('input[type="checkbox"]');
-        const visualValores = [20000, 40000, 30000, 90000, 20000, 4000, 10000, 10000, 30000, 10000, 30000, 5000, 20000, 20000, 20000, 15000, 15000, 15000, 20000, 10000, 10000, 15000, 10000, 10000, 30000, 20000, 20000, 30000, 20000, 20000, 15000, 30000, 30000];
-        visualCheckboxes.forEach((box, i) => {
-          if (box.checked) total += visualValores[i];
-        });
-      }
-
-      const interiorSection = Array.from(document.querySelectorAll('.section')).find(
-        sec => sec.querySelector('h4')?.textContent.trim() === 'Personalização Interna'
-      );
-      if (interiorSection) {
-        const interiorCheckboxes = interiorSection.querySelectorAll('input[type="checkbox"]');
-        const interiorValores = [40000, 20000, 50000, 20000, 30000, 30000, 35000, 30000, 30000, 35000, 30000];
-        interiorCheckboxes.forEach((box, i) => {
-          if (box.checked) total += interiorValores[i];
-        });
-      }
-
-      const desconto = parseFloat(document.getElementById('desconto').value) || 0;
-      const totalComDesconto = total - (total * desconto) / 100;
-      document.getElementById('total').value = totalComDesconto.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
-    }
-
-    function getSelectedValue(name) {
-      const radios = document.getElementsByName(name);
-      for (let i = 0; i < radios.length; i++) {
-        if (radios[i].checked) {
-          const label = radios[i].parentElement.textContent;
-          const match = label.match(/(\d+\.?\d*)/g);
-          if (match) return parseInt(match[match.length - 1].replace(/\./g, ''));
-        }
-      }
-      return 0;
-    }
-
-    function reload() {
-      window.location.reload();
-    }
-
-    function fullTuning() {
-      const freios = document.getElementsByName('freio');
-      const trans = document.getElementsByName('trans');
-      const susp = document.getElementsByName('susp');
-      const motor = document.getElementsByName('motor');
-
-      if (freios.length) freios[freios.length - 1].checked = true;
-      if (trans.length) trans[trans.length - 1].checked = true;
-      if (susp.length) susp[susp.length - 1].checked = true;
-      if (motor.length) motor[motor.length - 1].checked = true;
-
-      document.getElementsByName('blin').forEach(b => b.checked = false);
-      document.getElementsByName('vidro').forEach(b => b.checked = false);
-      document.getElementById('turbo').checked = true;
-      document.getElementById('hidraulica').checked = true;
-
-      Array.from(document.querySelectorAll('.section')).find(
-        sec => sec.querySelector('h4')?.textContent.trim() === 'Personalização Externa'
-      )?.querySelectorAll('input[type="checkbox"]').forEach(b => b.checked = false);
-
-      main();
-    }
-
-    // =====================================================
-    // ENVIA PARA O DISCORD — COM ID DO MECÂNICO E CLIENTE
-    // =====================================================
-    function enviarParaDiscord() {
-      const idCliente = document.getElementById('idCliente').value.trim();
-
-      // ❌ BLOQUEIA SE CÓDIGO INVÁLIDO
-      if (!idMecanicoAtual) {
-        alert("❌ ACESSO NEGADO!\nApenas mecânicos autorizados podem enviar orçamentos.");
-        return;
-      }
-
-      // ⚠️ AVISA SE ID DO CLIENTE ESTIVER VAZIO
-      if (!idCliente) {
-        alert("⚠️ Digite o ID do Cliente antes de enviar!");
-        return;
-      }
-
-      const webhookURL = "https://discord.com/api/webhooks/1466216848159674536/9qiP1720OVxgGne69OwQwjybBoNJ67UolkTbrLNe8czWtlh1W0kiQigvupu8inYHGeV2";
-      const total = document.getElementById('total').value;
-      const desconto = document.getElementById('desconto').value || "0";
-
-      let escolhas = [];
-      document.querySelectorAll('input[type="radio"]:checked, input[type="checkbox"]:checked').forEach(input => {
-        escolhas.push(input.parentElement.textContent.trim());
-      });
-
-      // ✅ LOG COM ID DO MECÂNICO + ID DO CLIENTE
-      const mensagem = `
-**ChaulimCommunity MOTORS — ORÇAMENTO DE TUNING**
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-**ID do Mecânico:** ${idMecanicoAtual}
-**ID do Cliente:** ${idCliente}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-**Itens escolhidos:**
-${escolhas.length > 0 ? escolhas.map(e => `✅ ${e}`).join('\n') : 'Nenhum item selecionado.'}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-💸 **Desconto aplicado:** ${desconto}%
-💰 **TOTAL A COBRAR:** **R$ ${total}**
-📅 **Data/Hora:** ${new Date().toLocaleString('pt-BR', { timeZone: 'America/Recife' })}
-      `;
-
-      fetch(webhookURL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ content: mensagem })
-      })
-      .then(res => {
-        if (res.ok) alert("✅ Orçamento enviado com sucesso!");
-        else alert("❌ Erro ao enviar. Verifique o webhook.");
-      })
-      .catch(() => alert("❌ Falha na conexão com o Discord."));
-    }
-
-    window.onload = main;
-  </script>
 </body>
 </html>
